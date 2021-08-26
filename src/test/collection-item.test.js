@@ -1,12 +1,10 @@
 import React from "react";
 import {configure, shallow} from "enzyme";
 import {expect} from "chai";
-import chai from "chai";
-import sinon from "sinon";
 import Adapter from "enzyme-adapter-react-16";
 import { CollectionItem } from "../components/collection-item/collection-item.component";
 import CartActionTypes from "../redux/cart/cart.types";
-import cartReducer from "../redux/cart/cart.reducer";
+import sinon from "sinon";
 
 configure({
     adapter: new Adapter()
@@ -21,6 +19,8 @@ describe('CollectionItem component', () => {
     const imageUrl = 'www.testImage.com';
     const mockName = 'black hat';
     const mockPrice = "10";
+    // create a spy function
+    const spy = sinon.spy();
 
     beforeEach(() => {
         const mockProps = {
@@ -29,9 +29,8 @@ describe('CollectionItem component', () => {
                 price: mockPrice,
                 name: mockName
             },
-            addItem: mockAddItem
+            addItem: spy
         };
-
         wrapper = shallow(<CollectionItem {...mockProps} />);
     });
 
@@ -39,17 +38,14 @@ describe('CollectionItem component', () => {
         expect(wrapper).to.exist
     })
 
-
     it('should have an image to display the product', function () {
         expect(wrapper.find('.image')).to.have.length(1);
     });
 
     it('should increase quantity of matching item by 1 if add to cart button is clicked', () => {
         wrapper.find('CustomButton').simulate('click');
-        expect(mockAddItem).to.have.all;
+        expect(spy.calledOnce).to.be.true;
     });
-
-
 
     it('should render name prop in NameContainer', () => {
         expect(wrapper.find('.name').text()).to.equal(mockName);
