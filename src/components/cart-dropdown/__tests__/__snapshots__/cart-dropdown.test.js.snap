@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartDropdown component should render CartDropdown component without error 1`] = `
+"<Provider store={{...}}>
+  <BrowserRouter>
+    <Router history={{...}}>
+      <CartDropdown cartItems={{...}} history={{...}} dispatch={[Function: mockConstructor]}>
+        <div className=\\"cart-dropdown\\">
+          <div className=\\"cart-items\\">
+            <CartItem item={{...}}>
+              <div className=\\"cart-item\\">
+                <img src=\\"https://i.ibb.co/ZYW3VTp/brown-brim.png\\" alt=\\"item\\" />
+                <div className=\\"item-details\\">
+                  <span className=\\"name\\">
+                    Brown Brim
+                  </span>
+                  <span className=\\"price\\">
+                     x €
+                    25
+                  </span>
+                </div>
+              </div>
+            </CartItem>
+            <CartItem item={{...}}>
+              <div className=\\"cart-item\\">
+                <img src={[undefined]} alt=\\"item\\" />
+                <div className=\\"item-details\\">
+                  <span className=\\"name\\" />
+                  <span className=\\"price\\">
+                     x €
+                  </span>
+                </div>
+              </div>
+            </CartItem>
+            <CartItem item={{...}}>
+              <div className=\\"cart-item\\">
+                <img src={[undefined]} alt=\\"item\\" />
+                <div className=\\"item-details\\">
+                  <span className=\\"name\\" />
+                  <span className=\\"price\\">
+                     x €
+                  </span>
+                </div>
+              </div>
+            </CartItem>
+          </div>
+          <CustomButton onClick={[Function: onClick]}>
+            <button className=\\"  custom-button\\" onClick={[Function: onClick]}>
+              GO TO CHECKOUT
+            </button>
+          </CustomButton>
+        </div>
+      </CartDropdown>
+    </Router>
+  </BrowserRouter>
+</Provider>"
+`;
+
+exports[`CartDropdown component should render empty message if cartItems is empty 1`] = `
+"<Provider store={{...}}>
+  <BrowserRouter>
+    <Router history={{...}}>
+      <CartDropdown cartItems={{...}} history={{...}} dispatch={[Function: mockConstructor]}>
+        <div className=\\"cart-dropdown\\">
+          <div className=\\"cart-items\\">
+            <span className=\\"empty-message\\">
+              Your cart is empty
+            </span>
+          </div>
+          <CustomButton onClick={[Function: onClick]}>
+            <button className=\\"  custom-button\\" onClick={[Function: onClick]}>
+              GO TO CHECKOUT
+            </button>
+          </CustomButton>
+        </div>
+      </CartDropdown>
+    </Router>
+  </BrowserRouter>
+</Provider>"
+`;
